@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{xls_to_csv-paperclip-processor}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Alexandrov"]
@@ -19,7 +19,8 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "lib/xls_to_csv-paperclip-processor.rb"
+    "lib/xls_to_csv-paperclip-processor.rb",
+    "xls_to_csv-paperclip-processor.gemspec"
   ]
   s.homepage = %q{http://github.com/igor-alexandrov/xls_to_csv-paperclip-processor}
   s.licenses = ["MIT"]
