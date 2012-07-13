@@ -4,7 +4,7 @@ This gem is Paperclip processor, that uses xls2csv to convert .xls to .csv.
 
 ## Requirements ##
 
-* [Paperclip][0] ~> 2.3
+* [Paperclip][0] ~> 2.5
 * [xls2csv][2]
 
 ## Installation ##
@@ -24,10 +24,9 @@ Various linux distributions should use similar methods with their respected pack
 Use it as you would any other Paperclip processor. In your model:
 
     class SomeCsvAttachement < ActiveRecord::Base
-      before_post_process :is_xls?
       has_attached_file :data,
                         :styles => {
-                          :csv => {                       
+                          :converted => {                       
                              :format => "csv",
                              :params => "-c, -q 3"
                           }
@@ -35,19 +34,10 @@ Use it as you would any other Paperclip processor. In your model:
                         :path => ":rails_root/data/some_csv_attachements/:id_partition/:basename.:extension",
                         :processors => [:xls_to_csv]
   
-      validates_attachment_content_type :data, :content_type => ['text/csv','text/comma-separated-values','text/csv','application/csv','application/excel','application/vnd.ms-excel','application/vnd.msexcel','text/anytext','text/plain']  
-  
-      def is_xls?
-        [
-          'application/excel',
-          'application/vnd.ms-excel',
-          'application/vnd.msexcel'
-        ].include?(self.data_content_type)    
-      end    
-  
+      validates_attachment_content_type :data, :content_type => ['text/csv','text/comma-separated-values','text/csv','application/csv','application/excel','application/vnd.ms-excel','application/vnd.msexcel','text/anytext','text/plain']    
     end
                       
-which will convert your .xls document into .csv, and keep both files (.xls and .csv) on the server. If your attachment is not a .xls it won't do anything.
+which will convert your .xls document into .csv, and keep both files (.xls and .csv) on the server. If your attachment is not a .xls it will just copy it.
 
 
 [0]: https://github.com/thoughtbot/paperclip
