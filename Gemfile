@@ -1,5 +1,5 @@
 source "http://rubygems.org"
-  gem 'paperclip', '>=2.5.0'
+  gem 'paperclip', '>=2.6.0'
 
 group :development do
   gem "bundler"

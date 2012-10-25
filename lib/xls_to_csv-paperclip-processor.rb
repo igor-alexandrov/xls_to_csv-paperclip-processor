@@ -17,9 +17,9 @@ class Paperclip::XlsToCsv < Paperclip::Processor
     dst = Tempfile.new([@basename, @format ? "#{@format}" : 'csv'].compact.join("."))
 
     begin      
-      Paperclip.run(self.command, self.parameters, :source => File.expand_path(src.path),:dest => File.expand_path(dst.path))      
+      Paperclip.run(self.command, self.parameters(src, dst))      
     rescue StandardError => e
-      raise Paperclip::StandardError, "There was an error converting #{@basename} to csv: #{e.message}"
+      raise "There was an error converting #{@basename} to csv: #{e.message}"
     end
 
     return dst
@@ -31,13 +31,13 @@ protected
     @current_format == '.xls' ? 'xls2csv' : 'cp'
   end
 
-  def parameters
+  def parameters(src, dst)
     p = []
 
     if self.command == 'xls2csv'
-      p << [@params, ":source", "> :dest"]
+      p << [@params, "#{File.expand_path(src.path)}", "> #{File.expand_path(dst.path)}"]
     else
-      p << [":source", ":dest"]  
+      p << ["#{File.expand_path(src.path)}", "#{File.expand_path(dst.path)}"]  
     end
     
     p.flatten.compact.join(" ").strip.squeeze(" ")
