@@ -9,9 +9,10 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Alexandrov"]
-  s.date = "2012-10-25"
+  s.date = "2012-11-27"
   s.description = "If you want to convert .xls to .csv simply and unwittingly, then this gem is for you!"
   s.email = "igor.alexandrov@gmail.com"
+  s.executables = ["xls2csv", "xlsx2csv"]
   s.extra_rdoc_files = [
     "README.md"
   ]
@@ -20,6 +21,8 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "bin/xls2csv",
+    "bin/xlsx2csv",
     "lib/xls_to_csv-paperclip-processor.rb",
     "xls_to_csv-paperclip-processor.gemspec"
   ]
