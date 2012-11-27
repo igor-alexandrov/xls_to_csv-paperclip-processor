@@ -21,7 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{If you want to convert .xls to .csv simply and unwittingly, then this gem is for you!}
   gem.email = "igor.alexandrov@gmail.com"
   gem.authors = ["Igor Alexandrov"]
-  gem.executables = [ 'xls2csv', 'xlsx2csv']
+  gem.executables = [ 'xls2csv.rb', 'xlsx2csv.rb']
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

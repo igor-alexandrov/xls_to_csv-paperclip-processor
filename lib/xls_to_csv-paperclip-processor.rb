@@ -40,7 +40,7 @@ protected
   def parameters(src, dst)
     p = []
 
-    if self.command == 'xls2csv'
+    if self.command == 'xls2csv.rb'
       p << [@params, "#{File.expand_path(src.path)}", "> #{File.expand_path(dst.path)}"]
     else
       p << ["#{File.expand_path(src.path)}", "#{File.expand_path(dst.path)}"]  
