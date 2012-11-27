@@ -28,7 +28,14 @@ class Paperclip::XlsToCsv < Paperclip::Processor
 protected
 
   def command
-    @current_format == '.xls' ? 'xls2csv' : 'cp'
+    case @current_format
+    when '.xls'
+      'xls2csv'
+    when '.xlsx'
+      'xlsx2csv'  
+    else
+      'cp'
+    end    
   end
 
   def parameters(src, dst)
