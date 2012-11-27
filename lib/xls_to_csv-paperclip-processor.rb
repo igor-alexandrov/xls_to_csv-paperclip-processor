@@ -29,9 +29,9 @@ protected
   def command
     case @current_format
     when '.xls'
-      'xls2csv'
+      'xls2csv.rb'
     when '.xlsx'
-      'xlsx2csv'  
+      'xlsx2csv.rb'  
     else
       'cp'
     end    
