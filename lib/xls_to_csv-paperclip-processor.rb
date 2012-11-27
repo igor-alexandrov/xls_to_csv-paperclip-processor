@@ -21,7 +21,6 @@ class Paperclip::XlsToCsv < Paperclip::Processor
     rescue StandardError => e
       raise "There was an error converting #{@basename} to csv: #{e.message}"
     end
-
     return dst
   end
 
