@@ -29,9 +29,9 @@ protected
   def command
     case @current_format
     when '.xls'
-      'xls2csv.rb'
+      'xls2csv'
     when '.xlsx'
-      'xlsx2csv.rb'  
+      'xlsx2csv'  
     else
       'cp'
     end    
@@ -40,7 +40,7 @@ protected
   def parameters(src, dst)
     p = []
 
-    if self.command == 'xls2csv.rb'
+    if self.command == 'xls2csv'
       p << [@params, "#{File.expand_path(src.path)}", "> #{File.expand_path(dst.path)}"]
     else
       p << ["#{File.expand_path(src.path)}", "#{File.expand_path(dst.path)}"]  
