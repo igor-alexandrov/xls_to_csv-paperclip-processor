@@ -5,14 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = "xls_to_csv-paperclip-processor"
-  s.version = "0.4.3"
+  s.version = "0.4.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Alexandrov"]
-  s.date = "2012-11-27"
+  s.date = "2012-11-28"
   s.description = "If you want to convert .xls to .csv simply and unwittingly, then this gem is for you!"
   s.email = "igor.alexandrov@gmail.com"
-  s.executables = ["xls2csv.rb", "xlsx2csv.rb"]
   s.extra_rdoc_files = [
     "README.md"
   ]
@@ -21,11 +20,7 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "bin/xls2csv.rb",
-    "bin/xlsx2csv.rb",
     "lib/xls_to_csv-paperclip-processor.rb",
-    "libexec/xls2csv",
-    "libexec/xlsx2csv",
     "xls_to_csv-paperclip-processor.gemspec"
   ]
   s.homepage = "http://github.com/igor-alexandrov/xls_to_csv-paperclip-processor"
