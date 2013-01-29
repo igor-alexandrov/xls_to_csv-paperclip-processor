@@ -41,9 +41,9 @@ protected
     p = []
 
     if self.command == 'xls2csv'
-      p << [@params, "#{File.expand_path(src.path)}", "> #{File.expand_path(dst.path)}"]
+      p << [@params, File.expand_path(src.path).shellescape, "> #{File.expand_path(dst.path).shellescape}"]
     else
-      p << ["#{File.expand_path(src.path)}", "#{File.expand_path(dst.path)}"]  
+      p << [File.expand_path(src.path).shellescape, File.expand_path(dst.path).shellescape]  
     end
     
     p.flatten.compact.join(" ").strip.squeeze(" ")
