@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "xls_to_csv-paperclip-processor"
-  s.version = "0.4.4"
+  s.version = "0.4.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Igor Alexandrov"]
-  s.date = "2012-11-28"
+  s.date = "2013-01-29"
   s.description = "If you want to convert .xls to .csv simply and unwittingly, then this gem is for you!"
   s.email = "igor.alexandrov@gmail.com"
   s.extra_rdoc_files = [
